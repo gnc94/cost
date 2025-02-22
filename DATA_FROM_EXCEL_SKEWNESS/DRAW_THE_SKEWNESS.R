@@ -9,7 +9,7 @@ library(e1071)
 library(ggplot2) 
 
 # Read the Excel file (update the file path as needed)
-data <- read_excel("C:/Users/janealam/Downloads/user.xlsx", sheet = 1) 
+data <- read_excel("C:/Users/Dell/Desktop/user.xlsx", sheet = 1) 
 
 # Extract the numerical column (e.g., salary)
 numerical_data <- data$salary 
