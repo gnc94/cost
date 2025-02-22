@@ -1,0 +1,13 @@
+# Creating a 3x3 matrix (2D array) 
+arr <- array(1:9, dim = c(3, 3)) 
+print(arr) 
+# Creating a list 
+my_list <- list(name = "John", age = 30, scores = c(85, 90, 88)) 
+print(my_list) 
+# Creating a data frame 
+df <- data.frame( 
+name = c("Alice", "Bob", "Charlie"), 
+age = c(25, 30, 35), 
+score = c(90, 80, 85) 
+) 
+print(df) 
