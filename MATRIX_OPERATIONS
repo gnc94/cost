@@ -1,0 +1,35 @@
+# Step 1: Create 3x3 matrices
+A <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, ncol = 3) 
+B <- matrix(c(19, 18, 17, 16, 15, 14, 13, 12, 11), nrow = 3, ncol = 3) 
+
+# Print matrices A and B
+cat("Matrix A:\n") 
+print(A) 
+cat("\nMatrix B:\n") 
+print(B) 
+
+# Step 2: Matrix addition (A + B)
+A_plus_B <- A + B 
+cat("\nMatrix A + B:\n") 
+print(A_plus_B) 
+
+# Step 3: Matrix inverse (only if matrix is invertible)
+# Check determinant to ensure matrix is invertible
+det_A <- det(A) 
+if (det_A != 0) { 
+  A_inv <- solve(A) # Inverse of matrix A
+  cat("\nInverse of Matrix A:\n") 
+  print(A_inv) 
+} else { 
+  cat("\nMatrix A is not invertible (determinant is 0).\n") 
+} 
+
+# Step 4: Matrix transpose
+A_transpose <- t(A) # Transpose of matrix A
+cat("\nTranspose of Matrix A:\n") 
+print(A_transpose) 
+
+# Step 5: Matrix multiplication (A * B)
+A_times_B <- A %*% B # Matrix multiplication (dot product)
+cat("\nMatrix A * B:\n") 
+print(A_times_B)
