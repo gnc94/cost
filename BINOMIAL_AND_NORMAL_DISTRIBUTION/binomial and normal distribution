@@ -3,7 +3,7 @@ library(readxl)
 library(ggplot2)
 
 # Read the Excel file
-data <- read_excel("C:/Users/janealam/Downloads/user.xlsx")
+data <- read_excel("C:/Users/Dell/Desktop/user.xlsx")
 
 # Extract salary data
 salary_data <- data$salary
