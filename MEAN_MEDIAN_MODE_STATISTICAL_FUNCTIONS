@@ -1,0 +1,38 @@
+# Sample Data
+data <- c(5, 12, 8, 13, 7, 5, 9, 15, 10, 8, 6, 11, 8)
+
+# 1. Mean
+mean_value <- mean(data)
+print(paste("Mean:", mean_value))
+
+# 2. Median
+median_value <- median(data)
+print(paste("Median:", median_value))
+
+# 3. Mode (using a custom function since R doesn't have a built-in mode function)
+mode_function <- function(x) {
+  uniqx <- unique(x)
+  uniqx[which.max(tabulate(match(x, uniqx)))]
+}
+mode_value <- mode_function(data)
+print(paste("Mode:", mode_value))
+
+# 4. Quartiles
+quartiles <- quantile(data)
+print("Quartiles:")
+print(quartiles)
+
+# 5. Range
+range_value <- range(data)
+print(paste("Range:", paste(range_value, collapse = " to ")))
+
+# 6. Interquartile Range (IQR)
+iqr_value <- IQR(data)
+print(paste("Interquartile Range (IQR):", iqr_value))
+
+# 7. Histogram
+hist(data, 
+     main = "Histogram of Data", 
+     xlab = "Values", 
+     col = "lightblue", 
+     border = "black")
