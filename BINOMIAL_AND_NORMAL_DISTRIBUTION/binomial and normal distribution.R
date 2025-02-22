@@ -1,0 +1,44 @@
+# Load necessary libraries
+library(readxl)
+library(ggplot2)
+
+# Read the Excel file
+data <- read_excel("C:/Users/janealam/Downloads/user.xlsx")
+
+# Extract salary data
+salary_data <- data$salary
+
+# Generate binomial distribution data
+n_trials <- 10      # Number of trials
+p_success <- 0.3    # Probability of success
+binomial_data <- rbinom(1000, size = n_trials, prob = p_success)
+
+# Plot histogram for binomial distribution
+hist(
+  binomial_data, 
+  probability = TRUE, 
+  main = "Binomial Distribution", 
+  xlab = "Number of Successes", 
+  col = "skyblue", 
+  border = "black"
+)
+
+# Calculate mean and standard deviation of salary
+mean_salary <- mean(salary_data)
+sd_salary <- sd(salary_data)
+
+# Plot histogram of salary with normal distribution curve
+ggplot(data, aes(x = salary)) +
+  geom_histogram(aes(y = ..density..), bins = 30, fill = "skyblue", color = "black") +
+  stat_function(
+    fun = dnorm, 
+    args = list(mean = mean_salary, sd = sd_salary), 
+    color = "red", 
+    size = 1
+  ) +
+  labs(
+    title = "Salary Distribution with Normal Curve", 
+    x = "Salary", 
+    y = "Density"
+  ) +
+  theme_minimal()
