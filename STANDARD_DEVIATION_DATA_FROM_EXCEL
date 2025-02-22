@@ -1,0 +1,17 @@
+# Install and load the required package
+install.packages("readxl") 
+library(readxl) 
+
+# Read the Excel file (update the file path as needed)
+data <- read_excel("C:/Users/Dell/Desktop/user.xlsx", sheet = 1) 
+
+# Extract the numerical column (e.g., salary)
+numerical_data <- data$salary 
+
+# Calculate standard deviation and variance
+sd_column <- sd(numerical_data) 
+var_column <- var(numerical_data) 
+
+# Print the results
+cat("Standard Deviation of the Column:", sd_column, "\n") 
+cat("Variance of the Column:", var_column, "\n")
